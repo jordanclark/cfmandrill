@@ -550,16 +550,10 @@ component {
 			cfhttpparam( type="body", value=arguments.json );
 		}
 		out.response= toString( http.fileContent );
-		this.debugLog( out.response );
-		this.debugLog( http );
-		//  RESPONSE CODE ERRORS 
-		if ( !structKeyExists( http, "ResponseHeader" ) || !structKeyExists( http.responseHeader, "Status_Code" ) ) {
-			out.error= "No response header returned";
-		} else {
-			out.statusCode= http.responseHeader[ "Status_Code" ];
-		}
-		this.debugLog( out.response );
-		//  RESPONSE CODE ERRORS 
+		// this.debugLog( out.response );
+		// this.debugLog( http );
+		out.statusCode = http.responseHeader.Status_Code ?: 500;
+		this.debugLog( out.statusCode );
 		if ( len( out.error ) ) {
 			out.success= false;
 		} else if ( out.statusCode == "401" ) {

@@ -1,4 +1,4 @@
-# mandrill
+# cfmandrill
 Mandrill.com ColdFusion Rest API Client
 
 # Changes
