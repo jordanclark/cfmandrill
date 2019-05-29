@@ -57,8 +57,8 @@ component {
 		return;
 	}
 
-	string function htmlCompressFormat(required string sInput) {
-		return reReplace( sInput, "[[:space:]]{2,}", chr( 13 ), "all" );
+	string function htmlCompressFormat(required string html) {
+		return reReplace( arguments.html, "[[:space:]]{2,}", chr( 13 ), "all" );
 	}
 	
 	//  ---------------------------------------------------------------------------------------------------------- 
@@ -450,9 +450,7 @@ component {
 			args[ "message" ][ "html" ]= this.htmlCompressFormat( args[ "message" ][ "html" ], 2 );
 		}
 		this.debugLog( "!!Send mail with mandrill to #arguments.mail.to#" );
-		if ( this.debug ) {
-			this.debugLog( arguments );
-		}
+		this.debugLog( args );
 		if ( arguments.send ) {
 			if ( !arguments.spool ) {
 				out= this.apiRequest( "messages/send.json", args );
