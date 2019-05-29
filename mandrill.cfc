@@ -5,12 +5,12 @@ component {
 	,	string subaccount= ""
 	,	string spoolDir= "ram:///mandrill"
 	,	boolean compress= false
-	,	boolean debug= false
 	,	string defaultFrom= ""
 	,	string defaultReplyTo= ""
 	,	string defaultBCC= ""
 	,	numeric httpTimeOut= 120
 	,	boolean stripQueryString= true
+	,	boolean debug= ( request.debug ?: false )
 	) {
 		this.apiUrl= "https://mandrillapp.com/api/1.0/";
 		this.subaccount= arguments.subaccount;
@@ -23,9 +23,6 @@ component {
 		this.defaultBCC= arguments.defaultBCC;
 		this.httpTimeOut= arguments.httpTimeOut;
 		this.stripQueryString= arguments.stripQueryString;
-		if ( structKeyExists( request, "debug" ) && request.debug == true ) {
-			this.debug= request.debug;
-		}
 		if ( len( arguments.spoolDir ) && !directoryExists( arguments.spoolDir ) ) {
 			directoryCreate( arguments.spoolDir );
 		}
