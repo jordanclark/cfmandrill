@@ -9,9 +9,13 @@
 # cfmandrill
 Mandrill.com ColdFusion Rest API Client
 
-# Changes
-2019-05-29 Initial release
+## To Install
+Run the following from commandbox:
+`box install cfmandrill`
 
-# API documentation
+## Changes
+2019-05-29 Open source release
+
+## API documentation
 https://mandrillapp.com/api/docs/
 
