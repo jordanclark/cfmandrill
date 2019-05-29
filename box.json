@@ -1,0 +1,41 @@
+{
+    "name":"cfmandrill",
+    "slug":"cfmandrill",
+    "version":"0.5.0",
+    "author":"Jordan Clark <jordanclark@gmail.com>",
+    "keywords":[
+        "mandrill",
+		"mandrillapp",
+		"mailchimp",
+        "email",
+        "smtp",
+        "api",
+        "rest"
+    ],
+    "shortDescription":"API client for MailChimp's mandrillapp.com",
+    "type":"modules",
+    "location":"jordanclark/cfmandrill#v0.5.0",
+    "repository":{
+        "URL":"https://github.com/jordanclark/cfmandrill.git",
+        "type":"GIT"
+    },
+    "homepage":"https://github.com/jordanclark/cfmandrill",
+    "bugs":"https://github.com/jordanclark/cfmandrill/issues",
+    "license":[
+        {
+            "type":"Apache-2.0",
+            "URL":"https://github.com/jordanclark/cfmandrill/blob/master/LICENSE"
+        }
+    ],
+    "private":false,
+    "ignore":[
+        "**/.*",
+        "/test/",
+        "/tests/"
+    ],
+    "scripts":{
+        "postVersion":"package set location='jordanclark/cfmandrill#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    }
+}
