@@ -1,7 +1,7 @@
 {
     "name":"cfmandrill",
     "slug":"cfmandrill",
-    "version":"0.5.3",
+    "version":"0.5.4",
     "author":"Jordan Clark <jordanclark@gmail.com>",
     "keywords":[
         "mandrill",
@@ -14,7 +14,7 @@
     ],
     "shortDescription":"API client for MailChimp's mandrillapp.com",
     "type":"modules",
-    "location":"jordanclark/cfmandrill#v0.5.3",
+    "location":"jordanclark/cfmandrill#v0.5.4",
     "repository":{
         "URL":"https://github.com/jordanclark/cfmandrill.git",
         "type":"GIT"
