@@ -13,6 +13,10 @@ Mandrill.com ColdFusion Rest API Client
 Run the following from commandbox:
 `box install cfmandrill`
 
+## Alternatives
+If you use coldbox definitely check out the mandrill module which might be a better fit for your project:
+https://www.forgebox.io/view/mandrill
+
 ## Changes
 2019-05-29 Open source release
 
