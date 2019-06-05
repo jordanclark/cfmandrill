@@ -514,7 +514,7 @@ component {
 						out[ fn ]= "error: file #fn# is missing";
 					}
 				}
-			};
+			} );
 		}
 		return out;
 	}
