@@ -583,7 +583,7 @@ component {
 					out.error= "Invalid response type: " & http.responseHeader[ "Content-Type" ];
 				}
 			} catch (any cfcatch) {
-				out.error= "JSON Error: " & cfcatch.message & " " & cfcatch.detail;
+				out.error= "JSON Error: " & (cfcatch.message?:"No catch message") & " " & (cfcatch.detail?:"No catch detail");
 			}
 		}
 		if ( len( out.error ) ) {
