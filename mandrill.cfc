@@ -446,9 +446,9 @@ component {
 		if ( this.compress ) {
 			args[ "message" ][ "html" ]= this.htmlCompressFormat( args[ "message" ][ "html" ], 2 );
 		}
-		this.debugLog( "!!Send mail with mandrill to #arguments.mail.to#" );
 		this.debugLog( args );
 		if ( arguments.send ) {
+			this.debugLog( "!!Send mail with mandrill to #arguments.mail.to#" );
 			if ( !arguments.spool ) {
 				out= this.apiRequest( "messages/send.json", args );
 				if ( !out.success ) {
@@ -461,6 +461,8 @@ component {
 				this.debugLog( "Spooled mail to #fn#" );
 				out.success= true;
 			}
+		} else {
+			this.debugLog( "!!Skip sending mail with mandrill to #arguments.mail.to#" );
 		}
 		out.mandrill= args;
 		out.mail= arguments.mail;
