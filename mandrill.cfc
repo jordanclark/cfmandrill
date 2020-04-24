@@ -10,8 +10,9 @@ component {
 	,	string defaultBCC= ""
 	,	numeric httpTimeOut= 120
 	,	boolean stripQueryString= true
-	,	boolean debug= ( request.debug ?: false )
+	,	boolean debug
 	) {
+		arguments.debug = ( arguments.debug ?: request.debug ?: false );
 		this.apiUrl= "https://mandrillapp.com/api/1.0/";
 		this.subaccount= arguments.subaccount;
 		this.apiKey= arguments.apiKey;
@@ -49,7 +50,12 @@ component {
 				request.log( arguments.input );
 			}
 		} else if( this.debug ) {
-			cftrace( text=( isSimpleValue( arguments.input ) ? arguments.input : "" ), var=arguments.input, category="Mandrill", type="information" );
+			var info= ( isSimpleValue( arguments.input ) ? arguments.input : serializeJson( arguments.input ) );
+			cftrace(
+				var= "info"
+			,	category= "Mandrill"
+			,	type= "information"
+			);
 		}
 		return;
 	}
