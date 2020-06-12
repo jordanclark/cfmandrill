@@ -463,7 +463,7 @@ component {
 			}
 			if ( arguments.spool && len( this.spoolDir ) ) {
 				var fn= "#this.spoolDir#/send_#getTickCount()#_#randRange( 1, 10000 )#.json";
-				fileWrite( fn, serializeJSON( args ) );
+				fileWrite( fn, serializeJSON( args, false, false ) );
 				this.debugLog( "Spooled mail to #fn#" );
 				out.success= true;
 			}
@@ -550,7 +550,7 @@ component {
 			if ( !structKeyExists( arguments.json, "subaccount" ) && len( this.subaccount ) ) {
 				arguments.json[ "subaccount" ]= this.subaccount;
 			}
-			arguments.json= serializeJSON( arguments.json );
+			arguments.json= serializeJSON( arguments.json, false, false );
 		}
 		cfhttp( result="http", method="POST", url=out.url, charset="utf-8", throwOnError=false, timeOut=this.httpTimeOut ) {
 			// cfhttpparam( type="header", name="Accept", value="application/json" );
